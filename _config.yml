@@ -1,10 +1,10 @@
 # Harmony Jekyll theme general configurations
 
 # Base URL
-baseurl: /harmony
+baseurl: /
 
 # Site live URL
-url: http://0xc0d3r.github.io
+url: https://0xc0d3r.github.io
 
 # Localhost
 # url: http://127.0.0.1:4000
@@ -25,7 +25,7 @@ harmony:
   author: # Author details
     name: Anesh Parvatha
     email:
-    url: http://0xc0d3r.github.io
+    url: https://0xc0d3r.github.io
 
   # Google Analytics key, leave blank to ignore
   google_analytics_key: UA-xxxx-x
