@@ -1,15 +1,17 @@
 ---
 layout: page
-title: About
+title: About me
 permalink: /about/
 ---
 
-Some information about you!
+Hi, I am Anesh Parvatha, a developer and security enthusiast who is working at [iBHubs][ibhubs]{:target="_blank"}.
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+Find me on [Github][github]{:target="_blank"} / [Facebook][facebook]{:target="_blank"} or just say `Hello` at
+[anesh.parvatha@gmail.com](anesh.parvatha@gmail.com).
+
+[ibhubs]: http://ibhubs.co/
+[github]: https://github.com/0xc0d3r
+[facebook]: https://facebook.com/anesh.parvatha
