@@ -34,20 +34,13 @@ So far, it's pretty cool and our code is readable. Now, let's see the some situa
 
 ## Pain points with Javascript's String
 
-* **Long strings:**
+* **Interpolate using expression, in addition to variable**
 
+{% code-tabs %}
+{% code-tabs-item title="Interpolation.js" %}
 ```javascript
-let longStr = "I'm a super long long long long long long\" + 
-" long long long long long long\" +
-" long long long long long long\" +
-" long long long long long long\" +
-" text. Check me out!";
-```
-
-* **Interpolate using expression, in addition to variable?**
-
-```text
 let isWorld = true;
+
 let printStr1 = "Hello " + isWorld ? "World" : "me";
 console.log(printStr1); //World
 
@@ -55,16 +48,25 @@ console.log(printStr1); //World
 let printStr2 = "Hello " + (isWorld ? "World" : "me");
 console.log(printStr2); //Hello World
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 * **Multi-lines string**
 
-```text
-let rhyme = "Are you sleeping? Are you sleeping?\nBrother John, Brother John!\nMorning bells are ringing!\nMorning bells are ringing!\nDing, ding, dong.\nDing, ding, dong.";
+{% code-tabs %}
+{% code-tabs-item title="MultiLineString.js" %}
+```javascript
+let rhyme = "Are you sleeping? Are you sleeping?\nBrother John, Brother John!\nMorning bells are ringi
+ng!\nMorning bells are ringing!\nDing, ding, dong.\nDing, ding, dong.";
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 * **HTML Raw Template**
 
-```text
+{% code-tabs %}
+{% code-tabs-item title="HTMLRaw.js" %}
+```javascript
 let person = {
     name: "Maya",
     hobbies: ["reading", "drawing", "traveling"],
@@ -79,10 +81,14 @@ function personTemplate(person){
 }
 document.write(personTemplate(person));
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 * **Paragraph strings with indentation**
 
-```text
+{% code-tabs %}
+{% code-tabs-item title="Paragraph.js" %}
+```javascript
 let paragraph = "Paragraph: \n" +
 "\t1. Point 1:\n" +
 "\t\t1.1 Sub-point 1:\n" +
@@ -96,14 +102,21 @@ let paragraph = "Paragraph: \n" +
 "Conclusion: I'm exhausted! Did I miss anything?";
 console.log(paragraph);
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 * **Having both single quote\('\) and double quotes\("\) in a string**
 
 
 
-```text
+{% code-tabs %}
+{% code-tabs-item title="SingleAndDoubleQuote.js" %}
+```javascript
+
 let introduction = 'My name is "John", I' + "'m using single quote (') and double quote " + '(") here';
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 For all the above pain points, we have a single solution i.e. _**Template Literals.**_
 
@@ -113,5 +126,52 @@ Template literals are string literals allowing embedded expressions.
 
 In all the above-mentioned pain points, **readability** is the major concern. Let's try to solve the each pain point using _template literals._
 
-* **Long strings**
+* **Interpolate using expression, in addition to variable**
+
+```text
+let welcome = `Hello ${isWorld ? "World" : "me"}!`;
+```
+
+* **Multi-lines strings and indented strings**
+
+```text
+let paragraph = 
+`Paragraph:
+    1. Point 1:
+       1.1 Sub-point 1:
+       1.2 Sub-point 2:
+    2. Point 2:
+       2.1 Sub-point 1:
+       2.2 Sub-point 2:
+    3. Point 3:
+       3.1 Sub-point 1:
+       3.2 Sub-point 2:
+Conclusion: I'm exhausted! Did I miss anything?`;
+console.log(paragraph);
+```
+
+* **HTML templates**
+
+```text
+function personTemplate({name, hobbies, job}){
+   return `<article class="person">
+   <h3>${name}</h3>
+   <div>
+       <div>Hobbies:</div>
+       <ul>
+           ${hobbies.map(hobby => `<li>${hobby}</li>`).join(" ")}
+       </ul>
+   </div>
+   <p>Current job: ${job}</p>
+</article>`;
+}
+```
+
+* **Having both single quote\('\) and double quotes\("\) in a string** 
+
+```text
+let introduction = `My name is "Maya Shavin", I'm using single quote (') and double quote (") here`;
+```
+
+
 
